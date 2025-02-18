@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');  // Fetch API를 사용할 경우 필요
 
 const repoPath = './';  // 리포지토리의 경로
 const markdownFiles = [];
