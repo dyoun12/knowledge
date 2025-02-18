@@ -26,7 +26,7 @@ jobs:
 
     - name: Generate graph view JSON
       run: |
-        node ./GraphView.js
+        node ././github/workflows/GraphView.js
 
     - name: Commit graphView.json
       run: |
