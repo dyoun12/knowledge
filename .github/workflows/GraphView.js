@@ -27,13 +27,17 @@ function extractTags(content) {
     const yamlPattern = /tags:\s*\n(?:\s*-?\s*(\w+))+/g;
     let match;
     while ((match = yamlPattern.exec(content)) !== null) {
-        tags.push(match[1]);
+        for (let i = 1; i < match.length; i++) {
+        tags.push(match[i]);
+    }
     }
 
     // 두 번째 패턴: #으로 시작하는 태그 추출
     const hashTagPattern = /#(\w+)/g;
     while ((match = hashTagPattern.exec(content)) !== null) {
-        tags.push(match[1]);
+        for (let i = 1; i < match.length; i++) {
+        tags.push(match[i]);
+    }
     }
 
     return tags;
