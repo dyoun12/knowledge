@@ -1,0 +1,65 @@
+{
+  "nodes": [
+    {
+      "id": "Docker Oracle-xe-11g Install.md",
+      "group": 1
+    },
+    {
+      "id": "Git 변경사항의 브랜치 이동.md",
+      "group": 1
+    },
+    {
+      "id": "JDBC.md",
+      "group": 1
+    },
+    {
+      "id": "RDBMS",
+      "group": 2
+    },
+    {
+      "id": "KAFKA-DEMO TS/KAFKA-DEMO TS.md",
+      "group": 1
+    },
+    {
+      "id": "Kafka Demo Scenario.md",
+      "group": 1
+    },
+    {
+      "id": "Linux swap 설정.md",
+      "group": 1
+    },
+    {
+      "id": "Linux",
+      "group": 2
+    },
+    {
+      "id": "Linux 구조/Linux 구조.md",
+      "group": 1
+    },
+    {
+      "id": "OS",
+      "group": 2
+    },
+    {
+      "id": "STS - Lombok Setting.md",
+      "group": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "RDBMS",
+      "target": "JDBC.md",
+      "value": 1
+    },
+    {
+      "source": "Linux",
+      "target": "Linux swap 설정.md",
+      "value": 1
+    },
+    {
+      "source": "OS",
+      "target": "Linux 구조/Linux 구조.md",
+      "value": 1
+    }
+  ]
+}
