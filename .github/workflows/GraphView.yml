@@ -30,8 +30,6 @@ jobs:
 
     - name: Commit graphView.json
       run: |
-        git config --global user.email "gdaeyeon002@gmail.com"
-        git config --global user.name "dyoun12"
         git add graphView.json
         git commit -m "Generate graph view JSON"
         # Use GITHUB_TOKEN for authentication
