@@ -34,7 +34,5 @@ jobs:
         git config --global user.name "dyoun12"
         git add graphView.json
         git commit -m "Generate graph view JSON"
-        git push
-
         # Use GITHUB_TOKEN for authentication
         git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/dyoun12/knowledge.git
