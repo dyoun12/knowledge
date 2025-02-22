@@ -1,15 +1,18 @@
 {
   "nodes": [
     {
-      "id": "Docker Oracle-xe-11g Install.md",
+      "id": "Docker Oracle-xe-11g Install",
+      "path": "Docker Oracle-xe-11g Install.md",
       "group": 1
     },
     {
-      "id": "Git 변경사항의 브랜치 이동.md",
+      "id": "Git 변경사항의 브랜치 이동",
+      "path": "Git 변경사항의 브랜치 이동.md",
       "group": 1
     },
     {
-      "id": "JDBC.md",
+      "id": "JDBC",
+      "path": "JDBC.md",
       "group": 1
     },
     {
@@ -21,15 +24,18 @@
       "group": 2
     },
     {
-      "id": "KAFKA-DEMO TS/KAFKA-DEMO TS.md",
+      "id": "KAFKA-DEMO TS",
+      "path": "KAFKA-DEMO TS/KAFKA-DEMO TS.md",
       "group": 1
     },
     {
-      "id": "Kafka Demo Scenario.md",
+      "id": "Kafka Demo Scenario",
+      "path": "Kafka Demo Scenario.md",
       "group": 1
     },
     {
-      "id": "Linux swap 설정.md",
+      "id": "Linux swap 설정",
+      "path": "Linux swap 설정.md",
       "group": 1
     },
     {
@@ -41,11 +47,13 @@
       "group": 2
     },
     {
-      "id": "Linux 구조/Linux 구조.md",
+      "id": "Linux 구조",
+      "path": "Linux 구조/Linux 구조.md",
       "group": 1
     },
     {
-      "id": "STS - Lombok Setting.md",
+      "id": "STS - Lombok Setting",
+      "path": "STS - Lombok Setting.md",
       "group": 1
     }
   ],
