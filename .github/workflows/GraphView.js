@@ -26,9 +26,8 @@ function extractTags(content) {
     // 첫 번째 패턴: YAML 형식의 tags 추출
     const yamlPattern = /tags:\s*\n(?:\s*-?\s*(\w+\s*))+/g;  // 수정된 정규식
     const tagPattern = /\s*-\s*(\w+)/g;
-    const tags = [];
+    
     let match;
-    console.log(content.match(yamlPattern))
     while ((match = tagPattern.exec(content.match(yamlPattern))) !== null) {
         // match 출력
         console.log("Match found:", match);
