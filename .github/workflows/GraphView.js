@@ -56,11 +56,12 @@ function generateGraphData() {
     const tagMap = new Map();  // 각 태그가 포함된 .md 파일을 추적
 
     markdownFiles.forEach(file => {
+        const fileName = path.basename(file, '.md'); // 확장자 제거한 파일명
         const content = fs.readFileSync(file, 'utf-8');
         const tags = extractTags(content);
 
-        // 파일을 노드로 추가
-        nodes.push({ id: file, group: 1 });
+        // 파일을 노드로 추가 (id는 파일명, url은 경로)
+        nodes.push({ id: fileName, path: file, group: 1 });
 
         // 태그들을 노드로 추가하고, 링크를 생성
         tags.forEach(tag => {
