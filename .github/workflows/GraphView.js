@@ -73,7 +73,7 @@ function generateGraphData() {
             }
 
             // 태그와 파일 간의 링크 생성
-            links.push({ source: tag, target: file, value: 1 });
+            links.push({ source: tag, target: fileName, value: 1 });
         });
     });
 
