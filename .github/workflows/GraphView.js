@@ -24,20 +24,27 @@ function extractTags(content) {
     let tags = [];
 
     // 첫 번째 패턴: YAML 형식의 tags 추출
-    const yamlPattern = /tags:\s*\n(?:\s*-?\s*(\w+))+/g;
+    const yamlPattern = /tags:\s*\n(?:\s*-?\s*(\w+\s*))+/g;  // 수정된 정규식
+    const tagPattern = /\s*-\s*(\w+)/g;
+    const tags = [];
     let match;
-    while ((match = yamlPattern.exec(content)) !== null) {
-        for (let i = 1; i < match.length; i++) {
-        tags.push(match[i]);
-    }
+    console.log(content.match(yamlPattern))
+    while ((match = tagPattern.exec(content.match(yamlPattern))) !== null) {
+        // match 출력
+        console.log("Match found:", match);
+    
+        // match 결과에서 태그를 추출하여 tags 배열에 추가
+        if (match[1]) {  // 첫 번째 캡처 그룹이 존재할 경우만 처리
+            tags.push(match[1]);
+        }
     }
 
     // 두 번째 패턴: #으로 시작하는 태그 추출
     const hashTagPattern = /#(\w+)/g;
     while ((match = hashTagPattern.exec(content)) !== null) {
-        for (let i = 1; i < match.length; i++) {
-        tags.push(match[i]);
-    }
+         if (match[1]) {  // 첫 번째 캡처 그룹이 존재할 경우만 처리
+            tags.push(match[1]);
+        }
     }
 
     return tags;
