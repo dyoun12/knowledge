@@ -60,32 +60,32 @@
   "links": [
     {
       "source": "JAVA",
-      "target": "JDBC.md",
+      "target": "JDBC",
       "value": 1
     },
     {
       "source": "RDBMS",
-      "target": "JDBC.md",
+      "target": "JDBC",
       "value": 1
     },
     {
       "source": "OS",
-      "target": "Linux swap 설정.md",
+      "target": "Linux swap 설정",
       "value": 1
     },
     {
       "source": "Linux",
-      "target": "Linux swap 설정.md",
+      "target": "Linux swap 설정",
       "value": 1
     },
     {
       "source": "Linux",
-      "target": "Linux 구조/Linux 구조.md",
+      "target": "Linux 구조",
       "value": 1
     },
     {
       "source": "OS",
-      "target": "Linux 구조/Linux 구조.md",
+      "target": "Linux 구조",
       "value": 1
     }
   ]
