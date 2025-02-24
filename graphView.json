@@ -1,64 +1,103 @@
 {
   "nodes": [
     {
-      "id": "Docker Oracle-xe-11g Install.md",
+      "id": 0,
+      "filename": "Docker Oracle-xe-11g Install",
+      "path": "Docker Oracle-xe-11g Install.md",
       "group": 1
     },
     {
-      "id": "Git 변경사항의 브랜치 이동.md",
+      "id": 1,
+      "filename": "Git 변경사항의 브랜치 이동",
+      "path": "Git 변경사항의 브랜치 이동.md",
       "group": 1
     },
     {
-      "id": "JDBC.md",
+      "id": 2,
+      "filename": "JDBC",
+      "path": "JDBC.md",
       "group": 1
     },
     {
-      "id": "RDBMS",
+      "id": 3,
+      "filename": "JAVA",
       "group": 2
     },
     {
-      "id": "KAFKA-DEMO TS/KAFKA-DEMO TS.md",
-      "group": 1
-    },
-    {
-      "id": "Kafka Demo Scenario.md",
-      "group": 1
-    },
-    {
-      "id": "Linux swap 설정.md",
-      "group": 1
-    },
-    {
-      "id": "Linux",
+      "id": 4,
+      "filename": "RDBMS",
       "group": 2
     },
     {
-      "id": "Linux 구조/Linux 구조.md",
+      "id": 5,
+      "filename": "KAFKA-DEMO TS",
+      "path": "KAFKA-DEMO TS/KAFKA-DEMO TS.md",
       "group": 1
     },
     {
-      "id": "OS",
+      "id": 6,
+      "filename": "Kafka Demo Scenario",
+      "path": "Kafka Demo Scenario.md",
+      "group": 1
+    },
+    {
+      "id": 7,
+      "filename": "Linux swap 설정",
+      "path": "Linux swap 설정.md",
+      "group": 1
+    },
+    {
+      "id": 8,
+      "filename": "OS",
       "group": 2
     },
     {
-      "id": "STS - Lombok Setting.md",
+      "id": 9,
+      "filename": "Linux",
+      "group": 2
+    },
+    {
+      "id": 10,
+      "filename": "Linux 구조",
+      "path": "Linux 구조/Linux 구조.md",
+      "group": 1
+    },
+    {
+      "id": 11,
+      "filename": "STS - Lombok Setting",
+      "path": "STS - Lombok Setting.md",
       "group": 1
     }
   ],
   "links": [
     {
-      "source": "RDBMS",
-      "target": "JDBC.md",
+      "source": 3,
+      "target": 2,
       "value": 1
     },
     {
-      "source": "Linux",
-      "target": "Linux swap 설정.md",
+      "source": 4,
+      "target": 2,
       "value": 1
     },
     {
-      "source": "OS",
-      "target": "Linux 구조/Linux 구조.md",
+      "source": 8,
+      "target": 7,
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 7,
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 10,
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 10,
       "value": 1
     }
   ]

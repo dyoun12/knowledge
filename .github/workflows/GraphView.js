@@ -24,20 +24,26 @@ function extractTags(content) {
     let tags = [];
 
     // 첫 번째 패턴: YAML 형식의 tags 추출
-    const yamlPattern = /tags:\s*\n(?:\s*-?\s*(\w+))+/g;
+    const yamlPattern = /tags:\s*\n(?:\s*-?\s*(\w+\s*))+/g;  // 수정된 정규식
+    const tagPattern = /\s*-\s*(\w+)/g;
+    
     let match;
-    while ((match = yamlPattern.exec(content)) !== null) {
-        for (let i = 1; i < match.length; i++) {
-        tags.push(match[i]);
-    }
+    while ((match = tagPattern.exec(content.match(yamlPattern))) !== null) {
+        // match 출력
+        console.log("Match found:", match);
+    
+        // match 결과에서 태그를 추출하여 tags 배열에 추가
+        if (match[1]) {  // 첫 번째 캡처 그룹이 존재할 경우만 처리
+            tags.push(match[1]);
+        }
     }
 
     // 두 번째 패턴: #으로 시작하는 태그 추출
     const hashTagPattern = /#(\w+)/g;
     while ((match = hashTagPattern.exec(content)) !== null) {
-        for (let i = 1; i < match.length; i++) {
-        tags.push(match[i]);
-    }
+         if (match[1]) {  // 첫 번째 캡처 그룹이 존재할 경우만 처리
+            tags.push(match[1]);
+        }
     }
 
     return tags;
@@ -47,26 +53,37 @@ function extractTags(content) {
 function generateGraphData() {
     const nodes = [];
     const links = [];
-    const tagMap = new Map();  // 각 태그가 포함된 .md 파일을 추적
+    const tagMap = new Map(); // 각 태그가 포함된 .md 파일을 추적
+    let nodeId = 0; // 숫자 ID 관리
+
+    const nodeMap = new Map(); // 파일명/태그 -> ID 매핑
 
     markdownFiles.forEach(file => {
+        const fileName = path.basename(file, '.md'); // 확장자 제거한 파일명
         const content = fs.readFileSync(file, 'utf-8');
         const tags = extractTags(content);
 
-        // 파일을 노드로 추가
-        nodes.push({ id: file, group: 1 });
+        // 파일을 노드로 추가 (id는 숫자, filename은 파일명, path는 경로)
+        const fileNode = { id: nodeId, filename: fileName, path: file, group: 1 };
+        nodes.push(fileNode);
+        nodeMap.set(fileName, nodeId); // 파일명 -> ID 매핑
+        nodeId++;
 
         // 태그들을 노드로 추가하고, 링크를 생성
         tags.forEach(tag => {
-            let tagNode = { id: tag, group: 2 };
-
-            // 태그가 이미 노드에 있는지 확인하고 없으면 추가
-            if (!nodes.some(node => node.id === tag)) {
-                nodes.push(tagNode);
+            let tagId;
+            if (!nodeMap.has(tag)) {
+                // 태그가 없으면 새로운 노드 추가
+                tagId = nodeId;
+                nodes.push({ id: tagId, filename: tag, group: 2 });
+                nodeMap.set(tag, tagId);
+                nodeId++;
+            } else {
+                tagId = nodeMap.get(tag);
             }
 
             // 태그와 파일 간의 링크 생성
-            links.push({ source: tag, target: file, value: 1 });
+            links.push({ source: tagId, target: fileNode.id, value: 1 });
         });
     });
 
