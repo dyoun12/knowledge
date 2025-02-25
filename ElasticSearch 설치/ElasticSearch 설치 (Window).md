@@ -1,6 +1,7 @@
 ---
 tags:
-  - ELK-Stack
+  - ELK
+  - BigData
 ---
 # ElasticSearch란?
 ElasticSearch는 분산형 RESTFul 검색 및 분석엔진으로, 빠르고 유연한 검색과 분석 기능을 가진 도구이다. 현재 ELK 스택(ElasticSearch, Logstash, Kibana)에서 핵심 구성요소이며, 실시간 데이터 검색과 분석에 많은 기업들에서 채택하고 있다.
